@@ -17,10 +17,11 @@ accuracy = int(r2_score(y_test,y_pred)*100)
 st.title("EXPECTED SALARY PREDICTION")
 experience=st.number_input("Enter Years of experience :")
 
+
 if st.button("SUBMIT"):
 
-    st.markdown("<h1 style='color: green;'><b>Expected Salary :</b></h1>",unsafe_allow_html=True)
+    st.markdown("<h1 style='color: green;'><b>Expected Salary Per Month:</b></h1>",unsafe_allow_html=True)
     output=int(model.predict(np.array(experience).reshape(1,-1))[0])
-    st.markdown(f'<h4 style="color: green;">{output}</h4>',unsafe_allow_html=True)
+    st.markdown(f'<h3 style="color: green;">\u20B9\t{output}</h3>',unsafe_allow_html=True)
     st.markdown("<h1 style='color: green;'><b>Accuracy :</b></h1>",unsafe_allow_html=True)
-    st.markdown(f'<h4 style="color: green;">{accuracy}%</h4>',unsafe_allow_html=True)
+    st.markdown(f'<h3 style="color: green;">{accuracy}%</h3>',unsafe_allow_html=True)
